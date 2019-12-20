@@ -5,15 +5,15 @@ import Adapter from 'enzyme-adapter-react-16'
 
 configure({ adapter: new Adapter() })
 
-describe('Test Button component', () => {
+describe('Test button component', () => {
   it('should be defined', () => {
     expect(Button).toBeDefined()
   })
 
-  it('click event is fired', () => {
+  it('should fire event', () => {
     const mockCallBack = jest.fn()
 
-    const button = shallow((<Button onClick={mockCallBack}>Ok!</Button>))
+    const button = shallow((<Button onClick={mockCallBack}>click me</Button>))
     button.find('button').simulate('click')
     expect(mockCallBack.mock.calls.length).toEqual(1)
   })
