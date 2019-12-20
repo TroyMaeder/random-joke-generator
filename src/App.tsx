@@ -1,10 +1,10 @@
 import React, { FC, useEffect, useState } from 'react';
 import './App.scss';
 import Button from './components/Button/Button'
-import { Fetcher } from './helpers/fetcher'
+import Fetcher from './helpers/fetcher'
+import BASEURLS from './shared/base-urls'
 
 const App: FC<{}> = () => {
-  const apiHost = 'https://api.chucknorris.io/jokes/random'
   const get = (apiHost: string) => {
     Fetcher.get(apiHost)
     .then((res: any) => {
@@ -18,7 +18,7 @@ const App: FC<{}> = () => {
   }
 
   useEffect(() => {
-    get(apiHost)
+    get(BASEURLS.randomJokes)
   }, [])
 
   const [joke, setJoke] = useState('')
@@ -33,7 +33,7 @@ const App: FC<{}> = () => {
   return (
       <>
         <section>{joke}</section>
-        <Button onClick={() => get(apiHost)} text="random joke" />
+        <Button onClick={() => get(BASEURLS.randomJokes)} text="random joke" />
       </>
   )
 }

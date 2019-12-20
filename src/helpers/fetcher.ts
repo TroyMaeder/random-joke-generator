@@ -18,4 +18,4 @@ const Fetcher = {
     //TODO: add for post....
 }
 
-export { Fetcher }
+export default Fetcher
