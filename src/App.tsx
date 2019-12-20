@@ -1,41 +1,14 @@
-import React, { FC, useEffect, useState } from 'react';
-import './App.scss';
-import Button from './components/Button/Button'
-import Fetcher from './helpers/fetcher'
+import React, { FC, Suspense } from 'react';
+import './App.scss'
 import BASEURLS from './shared/base-urls'
+import JokeGenerator from './components/JokeGenerator/JokeGenerator'
 
-const App: FC<{}> = () => {
-  const get = (apiHost: string) => {
-    Fetcher.get(apiHost)
-    .then((res: any) => {
-      setJoke(res.value)
-      setIsLoaded(true)
-    })
-    .catch(err => {
-        //TODO: handle error
-        setIsLoaded(true)
-    })
-  }
+const App: FC<{}> = () => (
+    <>
+      <Suspense fallback={<h4>Still loading...</h4>}>
+        <JokeGenerator baseUrl={BASEURLS.randomJokes} />
+      </Suspense>
+    </>
+)
 
-  useEffect(() => {
-    get(BASEURLS.randomJokes)
-  }, [])
-
-  const [joke, setJoke] = useState('')
-  const [isLoaded, setIsLoaded] = useState(false)
-
-  if (!isLoaded) {
-    return (
-      <section>....is loading</section>
-    )
-  }
-
-  return (
-      <>
-        <section>{joke}</section>
-        <Button onClick={() => get(BASEURLS.randomJokes)} text="random joke" />
-      </>
-  )
-}
-
-export default App;
+export default App
