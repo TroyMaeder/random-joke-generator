@@ -1,6 +1,6 @@
 
-import React, { FC, useEffect, useState } from 'react';
-import './App.scss';
+import React, { FC, useEffect, useState } from 'react'
+import './App.scss'
 import Button from '../Button/Button'
 import Fetcher from '../../helpers/fetcher'
 

@@ -1,4 +1,4 @@
-import React, { FC, Suspense } from 'react';
+import React, { FC, Suspense } from 'react'
 import './App.scss'
 import BASEURLS from './shared/base-urls'
 import JokeGenerator from './components/JokeGenerator/JokeGenerator'

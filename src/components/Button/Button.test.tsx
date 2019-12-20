@@ -21,7 +21,7 @@ describe('Test Button component', () => {
   it('should render correctly', () => {
     const tree = shallow(
       <Button text='button text' className="btn" />
-    );
-    expect(tree).toMatchSnapshot();
+    )
+    expect(tree).toMatchSnapshot()
   })
 })
