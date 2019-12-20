@@ -1,0 +1,9 @@
+@import './shared/constants.scss';
+
+.app {
+  text-align: center;
+
+  &__header {
+    border: 1px $purple solid;
+  }
+}
