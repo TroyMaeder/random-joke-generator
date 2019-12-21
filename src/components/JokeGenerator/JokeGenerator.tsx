@@ -1,6 +1,5 @@
 
 import React, { FC, useEffect, useState } from 'react'
-import './App.scss'
 import Button from '../Button/Button'
 import Fetcher from '../../helpers/fetcher'
 
@@ -19,7 +18,7 @@ const JokeGenerator: FC<JokeGeneratorProps> = ({ baseUrl }) => {
     })
   }
 
-  useEffect(() => get(baseUrl))
+  useEffect(() => get(baseUrl), [])
 
   const [joke, setJoke] = useState('')
 
