@@ -2,6 +2,7 @@
 import React, { FC, useEffect, useState } from 'react'
 import Button from '../Button/Button'
 import Fetcher from '../../helpers/fetcher'
+import './styles.scss'
 
 interface JokeGeneratorProps {
   baseUrl: string
@@ -25,7 +26,7 @@ const JokeGenerator: FC<JokeGeneratorProps> = ({ baseUrl }) => {
   return (
       <>
         <section>{joke}</section>
-        <Button onClick={() => get(baseUrl)} text="random joke" />
+        <Button className="joke" onClick={() => get(baseUrl)} text="random joke" />
       </>
   )
 }
