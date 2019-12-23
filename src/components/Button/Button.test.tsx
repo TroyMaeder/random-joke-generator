@@ -1,9 +1,6 @@
 import React from 'react'
-import { shallow, configure } from 'enzyme'
+import { shallow } from 'enzyme'
 import Button from './Button'
-import Adapter from 'enzyme-adapter-react-16'
-
-configure({ adapter: new Adapter() })
 
 describe('Test button component', () => {
   it('should be defined', () => {
