@@ -19,7 +19,7 @@ const JokeGenerator: FC<JokeGeneratorProps> = ({ baseUrl }) => {
     })
   }
 
-  useEffect(() => get(baseUrl), [])
+  useEffect(() => get(baseUrl), [baseUrl])
 
   const [joke, setJoke] = useState('')
 
