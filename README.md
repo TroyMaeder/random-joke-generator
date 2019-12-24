@@ -1,6 +1,6 @@
 # random-joke-generator
 
-## This project has been created as a fun way of leanring the following:
+## This project has been created as a fun way of learning the following:
 
 ### Izaak
 
